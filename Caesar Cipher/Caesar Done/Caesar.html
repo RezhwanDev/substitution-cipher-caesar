@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Caesar.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #a9b7c6; background-color: #2b2b2b; font-family: Monospaced}
+pre {color: #a9b7c6; background-color: #2b2b2b; font-family: Monospaced}
+table {color: #888888; background-color: #313335; font-family: Monospaced}
+.ST0 {color: #808080; font-family: Monospaced; font-weight: bold}
+.comment {color: #808080}
+.whitespace {color: #505050}
+.ST3 {color: #9876aa; font-family: Monospaced; font-style: italic}
+.ST4 {color: #ffc66d; font-family: Monospaced; font-style: italic}
+.string {color: #6a8759}
+.number {color: #6897bb}
+.ST1 {color: #9876aa}
+.ST2 {color: #ffc66d}
+.literal {color: #cc7832}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">E:\stage 3\Security\Midterm\Caesar\src\caesar\Caesar.java</td></tr></table>
+<pre>
+ 1 <span class="comment">/**</span>
+ 2 <span class="comment"> * </span><span class="ST0">@author</span> <span class="comment">Rezhwan</span> <span class="comment">Sidiq</span>
+ 3 <span class="comment"> * 21/</span><span class="comment">Nov</span><span class="comment">/2017</span>
+ 4 <span class="comment"> * </span><span class="comment">MidtermExam</span> <span class="comment">Study</span><span class="comment"> (-</span><span class="comment">_</span><span class="comment">-</span>
+ 5 <span class="comment"> * 20:18</span>
+ 6  <span class="comment">*/</span>
+ 7 <span class="literal">package</span> caesar;
+ 8     <span class="literal">public</span> <span class="literal">class</span> Caesar {
+ 9 
+10     <span class="literal">char</span> <span class="ST1">alpha</span>[]={<span class="string">&#39;</span><span class="string">A</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">B</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">C</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">D</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">E</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">F</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">G</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">H</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">I</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">J</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">K</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">L</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">M</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">N</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">O</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">P</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">Q</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">R</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">S</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">T</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">U</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">V</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">W</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">X</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">Y</span><span class="string">&#39;</span>,<span class="string">&#39;</span><span class="string">Z</span><span class="string">&#39;</span>};
+11     
+12     <span class="literal">public</span> <span class="literal">void</span> <span class="ST2">enc</span>(String s,<span class="literal">int</span> key){
+13         
+14       String  ss=s.toUpperCase();
+15       <span class="literal">char</span> [] message =ss.toCharArray();
+16       <span class="literal">char</span> [] result =<span class="literal">new</span> <span class="literal">char</span>[message.<span class="ST1">length</span>];
+17       <span class="literal">int</span> count ;
+18         
+19       <span class="literal">for</span> (<span class="literal">int</span> i = <span class="number">0</span>; i &lt; message.<span class="ST1">length</span>; i++) {
+20             <span class="literal">for</span> (<span class="literal">int</span> j = <span class="number">0</span>; j &lt; <span class="ST1">alpha</span>.<span class="ST1">length</span>; j++) {
+21                 <span class="literal">if</span> (message[i] == <span class="ST1">alpha</span>[j]) {
+22                     count=(j+key)%<span class="number">26</span>;
+23                     result[i]=<span class="ST1">alpha</span>[count];
+24                 }
+25             }
+26         }
+27         String Sresult = <span class="literal">new</span> String (result);
+28         System.<span class="ST3">out</span>.println(<span class="string">&quot;</span><span class="string">Final Result of encryption = </span><span class="string">&quot;</span>+Sresult);
+29     }
+30     
+31     <span class="literal">public</span> <span class="literal">void</span> <span class="ST2">dec</span>(String s,<span class="literal">int</span> key){
+32     
+33     String  ss=s.toUpperCase();
+34     <span class="literal">char</span> [] message =ss.toCharArray();
+35     <span class="literal">char</span> [] result =<span class="literal">new</span> <span class="literal">char</span>[message.<span class="ST1">length</span>];
+36     <span class="literal">int</span> count ;
+37       
+38     <span class="literal">for</span> (<span class="literal">int</span> i = <span class="number">0</span>; i &lt; message.<span class="ST1">length</span>; i++) {
+39         <span class="literal">for</span> (<span class="literal">int</span> j = <span class="number">0</span>; j &lt; <span class="ST1">alpha</span>.<span class="ST1">length</span>; j++) {
+40             <span class="literal">if</span> (message[i] == <span class="ST1">alpha</span>[j]) {
+41                     count=j-key;
+42                     <span class="literal">if</span> (count &lt; <span class="number">0</span>) {
+43                     count=count+<span class="number">26</span>;
+44                      result[i]=<span class="ST1">alpha</span>[count];
+45                 } <span class="literal">else</span> result[i]=<span class="ST1">alpha</span>[count];
+46             }
+47         }
+48     }
+49         String Sresult = <span class="literal">new</span> String (result);
+50         System.<span class="ST3">out</span>.println(<span class="string">&quot;</span><span class="string">Final Result of Decryption = </span><span class="string">&quot;</span>+Sresult);
+51     }
+52     
+53     <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST4">main</span>(String[] args) {
+54         Caesar cob = <span class="literal">new</span> Caesar();
+55         cob.enc(<span class="string">&quot;</span><span class="string">Rezhwan</span><span class="string">&quot;</span>,<span class="number">5</span>);
+56         cob.dec(<span class="string">&quot;</span><span class="string">WJEMBFS</span><span class="string">&quot;</span>,<span class="number">5</span>);
+57     }
+58 }
+59 <span class="comment">/*  OutPut</span>
+60 <span class="comment">Final Result of encryption = WJEMBFS</span>
+61 <span class="comment">Final Result of Decryption = REZHWAN</span>
+62 <span class="comment">*/</span>
+63 
+</pre></body>
+</html>
