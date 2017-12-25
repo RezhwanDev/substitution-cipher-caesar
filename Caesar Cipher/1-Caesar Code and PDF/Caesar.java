@@ -1,14 +1,15 @@
 /**
  * @author Rezhwan Sidiq
  * 21/Nov/2017
- * MidtermExam Study (-_-
  * 20:18
  */
 
     public class Caesar {
-
+    
+        // Our Car  Arrays
     char alpha[]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
-
+        
+       // Encryption Method
     public void enc(String s,int key){
 
       String  ss=s.toUpperCase();
@@ -28,6 +29,7 @@
         System.out.println("Final Result of encryption = "+Sresult);
     }
 
+       //Decryption Method
     public void dec(String s,int key){
 
     String  ss=s.toUpperCase();
@@ -50,6 +52,7 @@
         System.out.println("Final Result of Decryption = "+Sresult);
     }
 
+        //Our Main Method
     public static void main(String[] args) {
         Caesar cob = new Caesar();
         cob.enc("Rezhwan",5);
