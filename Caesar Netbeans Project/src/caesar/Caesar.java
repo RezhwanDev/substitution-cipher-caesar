@@ -1,7 +1,6 @@
 /**
  * @author Rezhwan Sidiq
  * 21/Nov/2017
- * MidtermExam Study (-_-
  * 20:18
  */
 package caesar;
@@ -52,6 +51,7 @@ package caesar;
     
     public static void main(String[] args) {
         Caesar cob = new Caesar();
+	
         cob.enc("Rezhwan",5);
         cob.dec("WJEMBFS",5);
     }
